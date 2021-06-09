@@ -1,4 +1,4 @@
-FROM jd_task
+FROM alpine
 MAINTAINER karl <zsrrr@qq.com>
 
 RUN set -ex \
