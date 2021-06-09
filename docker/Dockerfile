@@ -1,5 +1,5 @@
-FROM alpine
-MAINTAINER Akira <e.akimoto.akira@gmail.com>
+FROM jd_task
+MAINTAINER karl <zsrrr@qq.com>
 
 RUN set -ex \
         && apk update && apk upgrade\
@@ -7,7 +7,7 @@ RUN set -ex \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone
 
-RUN git clone https://github.com/zhangsongran/JD-scripts /scripts \
+RUN git clone https://github.com/zhangsongran/jd_task.git /scripts \
         && cd /scripts \
         && mkdir logs \
         && npm install \
