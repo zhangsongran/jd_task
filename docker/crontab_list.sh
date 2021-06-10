@@ -3,16 +3,9 @@
 # 每3天的23:50分清理一次日志
 50 23 */3 * * rm -rf /scripts/logs/*.log
 
-##############短期活动##############
-#年货节(活动时间：2021年1月9日-2021年2月9日)
-10 8 * * * node /scripts/jd_nh.js >> /scripts/logs/jd_nh.log 2>&1
-#京东炸年兽集爆竹(活动时间:2021-1-18至2021-2-11)怕有遗漏故多运行几次
-0 8,9,10 * * * node /scripts/jd_nian.js >> /scripts/logs/jd_nian.log 2>&1
-#专门收集每秒产生的爆竹(1小时运行一次)
-0 * * * * node /scripts/jd_nianCollect.js >> /scripts/logs/jd_nianCollect.log 2>&1
 ##############长期活动##############
 # 签到
-0 0,18 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
+0 0,18 * * * cd /scripts && node app.js >> /scripts/logs/jd_bean_sign.log 2>&1
 # 京小超兑换奖品
 0,30 0 * * * node /scripts/jd_blueCoin.js >> /scripts/logs/jd_blueCoin.log 2>&1
 # 摇京豆
@@ -90,6 +83,6 @@
 # 签到领现金
 27 7 * * * node /scripts/jd_cash.js >> /scripts/logs/jd_cash.log 2>&1
 # 京喜app签到
-39 7 * * * node /scripts/jx_sign.js >> /scripts/logs/jx_sign.log 2>&1
+39 7 * * * node /scripts/jx_sign.懂js >> /scripts/logs/jx_sign.log 2>&1
 #京东家庭号(暂不知最佳cron)
 */20 * * * * node /scripts/jd_family.js >> /scripts/logs/jd_family.log 2>&1
